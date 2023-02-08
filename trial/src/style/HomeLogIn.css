@@ -3,6 +3,9 @@
     height: 100%;
     background-color: black;
     position: absolute; top: 0; left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .formContainer{
@@ -10,6 +13,9 @@
     height: 100%;
     background-color: rgb(255, 255, 255);
     position: absolute; top: 0; right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @font-face {
@@ -20,15 +26,10 @@
 .D5Header{
     font-family: "d5Font";
     font-size: 20vw;
-    text-align: center;
-    margin: 250px auto;
-    
-
 }
 
 .LoginForm{
     margin: 200px auto;
-    border: 5px solid red;
     padding: 20px;
     text-align: center;
 }
