@@ -10,6 +10,7 @@ import Cart from './Cart';
 function App() {
   return (
 
+    <div className="container">
     <Router>
       <NavBar/>
             
@@ -22,6 +23,7 @@ function App() {
     </div>
 
     </Router>
+    </div>
   );
 }
 

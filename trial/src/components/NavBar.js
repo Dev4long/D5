@@ -26,28 +26,28 @@ function NavBar() {
       <div className= "navbar">
       
       <div className="container">
-          <h2 className="name">D5</h2>
+          <h2 className="name" style={{fontSize:"40px"}}>D5</h2>
           
          
           <div className="menu">
-          <MenuIcon className="menuIcon" style={{color:"white"}} onClick={showBar} />
+          <MenuIcon className="menuIcon" style={{color:"white", fontSize:"50px", marginTop:"5px"}} onClick={showBar} />
           
             
             
             
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-            <ul className= 'nav-menu-items' onClick={showBar}>
-              <li className="navBar-toggle">
+            <ul className= 'nav-menu-items'>
+              <li onClick={showBar}  className="navBar-toggle">
               <CloseIcon className="X"/>
               </li>
               <li className="links">
-              <Link to="/" style={{textDecoration:"none",color:"black"}} className="linksH">About</Link>
+              <Link onClick={showBar} to="/" style={{textDecoration:"none",color:"white"}} className="linksH">About</Link>
               </li>
-              <li className="links">
-              <Link onClick={handleClickM} to="/merch" style={{textDecoration:"none",color:"black"}} className="linksH">Merch</Link>
+              <li onClick={showBar}className="links">
+              <Link onClick={handleClickM} to="/merch" style={{textDecoration:"none",color:"white"}} className="linksH">Merch</Link>
               </li>
-              <li onClick={handleClickC} className="links">
-              <Link to="/cart"style={{textDecoration:"none",color:"black"}} className="linksH">Cart</Link>
+              <li onClick={showBar} className="links">
+              <Link onClick={handleClickC} to="/cart"style={{textDecoration:"none",color:"white"}} className="linksH">Cart</Link>
               </li>
             </ul>
             </nav>
