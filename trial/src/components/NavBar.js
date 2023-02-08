@@ -30,7 +30,7 @@ function NavBar() {
           
          
           <div className="menu">
-          <MenuIcon className="menuIcon" style={{color:"white", fontSize:"50px", marginTop:"5px"}} onClick={showBar} />
+          <MenuIcon className="menuIcon" style={{fontSize:"50px", marginTop:"5px"}} onClick={showBar} />
           
             
             

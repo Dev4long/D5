@@ -21,7 +21,8 @@
     width: 100%;
     background-color: rgb(0, 0, 0);
     position: absolute; top: 0; left: 0;
-    z-index: 99 !important;
+    border-top: 3px solid rgb(255, 0, 0);
+    border-bottom: 3px solid rgb(255, 0, 0);
     }
 
 .linksH:hover{
@@ -29,6 +30,7 @@
     padding: 10px 10px 10px 10px;
     /* box-shadow: 2px 2px 2px 2px rgb(255, 255, 255);; */
     border: 3px solid rgb(255, 0, 0);
+    
 }
 
 .menuIcon{
@@ -37,6 +39,11 @@
     right: 20px; 
     font-size: 2rem;
     cursor: pointer;
+    color: white;
+}
+
+.menuIcon:hover, .X:hover{
+    color: red;
 }
 
 .nav-menu {
@@ -49,7 +56,7 @@
     left: -100%;
     transition: 850ms;
     border-right: 5px solid rgb(255, 0, 0);
-    margin-top: 118px;
+    margin-top: 115.5px;
   }
   .nav-menu.active {
     left: 0;
@@ -66,3 +73,4 @@
     padding-left: 75px;
     cursor: pointer;
   }
+

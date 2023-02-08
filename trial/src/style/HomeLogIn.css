@@ -1,0 +1,47 @@
+.D5Logo{
+    width: 60%;
+    height: 100%;
+    background-color: black;
+    position: absolute; top: 0; left: 0;
+}
+
+.formContainer{
+    Width:40%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    position: absolute; top: 0; right: 0;
+}
+
+@font-face {
+    font-family: 'D5Font';
+    src: url("/Users/deniskadrich/Documents/D5/trial/public/Urban Heroes.ttf") format('truetype');
+  }
+
+.D5Header{
+    font-family: "d5Font";
+    font-size: 20vw;
+    text-align: center;
+    margin: 250px auto;
+    
+
+}
+
+.LoginForm{
+    margin: 200px auto;
+    border: 5px solid red;
+    padding: 20px;
+    text-align: center;
+}
+
+@media (max-width: 420px) {
+    .D5Header {
+      font-size: 100px;
+    }
+    .D5Logo{
+      display: none;
+    }
+    .formContainer{
+    Width:100%;
+    height:100%;
+    }
+  }
