@@ -16,6 +16,10 @@ function NavBar() {
       navigate("/cart")
     }
   
+    const handleClickA = () => {
+      navigate("/about")
+    }
+
     const[sidebar, setBar] = useState(false)
   
     const showBar = () => setBar(!sidebar)
@@ -40,8 +44,8 @@ function NavBar() {
               <li onClick={showBar}  className="navBar-toggle">
               <CloseIcon className="X"/>
               </li>
-              <li className="links">
-              <Link onClick={showBar} to="/" style={{textDecoration:"none",color:"white"}} className="linksH">About</Link>
+              <li onClick={showBar} className="links">
+              <Link onClick={handleClickA} to="/" style={{textDecoration:"none",color:"white"}} className="linksH">About</Link>
               </li>
               <li onClick={showBar}className="links">
               <Link onClick={handleClickM} to="/merch" style={{textDecoration:"none",color:"white"}} className="linksH">Merch</Link>

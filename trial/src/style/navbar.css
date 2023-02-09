@@ -15,14 +15,13 @@
     position: relative;
     color: rgb(255, 255, 255);
     width: 50px;
+    font-family: "d5font";
 }
 
 .container{
     width: 100%;
     background-color: rgb(0, 0, 0);
     position: absolute; top: 0; left: 0;
-    border-top: 3px solid rgb(255, 0, 0);
-    border-bottom: 3px solid rgb(255, 0, 0);
     }
 
 .linksH:hover{
@@ -54,8 +53,8 @@
     position: fixed;  
     left: -100%;
     transition: 850ms;
-    border-right: 5px solid rgb(255, 0, 0);
-    margin-top: 115.5px;
+    /* border-right: 5px solid rgb(255, 0, 0); */
+    margin-top: 110px;
   }
   .nav-menu.active {
     left: 0;
@@ -73,3 +72,7 @@
     cursor: pointer;
   }
 
+  @font-face {
+    font-family: 'D5Font';
+    src: url("/Users/deniskadrich/Documents/D5/trial/public/Urban Heroes.ttf") format('truetype');
+  }
