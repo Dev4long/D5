@@ -23,8 +23,15 @@ function HomeLogIn() {
     
     <div className = "formContainer">
       
+      
+      <div className="topBanner">
+        D5
+      </div>
+
       {signUp ? ( null ) : <div className="LoginForm">
-      <div><LockOutlinedIcon style={{color:"white", background:"red", marginBottom:"20px"}}/></div>
+      <div>
+        <LockOutlinedIcon style={{color:"white", background:"red", marginBottom:"20px"}}/>
+        </div>
       Login
       <form>
       <div>
@@ -42,7 +49,6 @@ function HomeLogIn() {
       {"Don't have an account? Sign Up"}
       </Link>
       </div>
-
       </form>
       </div>}
 
