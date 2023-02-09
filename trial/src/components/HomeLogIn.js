@@ -5,9 +5,14 @@ import TextField from '@material-ui/core/TextField';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Link } from '@material-ui/core';
 import {useState} from 'react';
+import { useDispatch, useSelector } from 'react-redux'
+import { handle } from './slice';
 
 
 function HomeLogIn() {
+
+  const truth = useSelector((state) => state.toggle.value)
+  const dispatch = useDispatch()
 
   const[signUp, toggleSignUp] = useState(false)
   
@@ -30,7 +35,7 @@ function HomeLogIn() {
 
       {signUp ? ( null ) : <div className="LoginForm">
       <div>
-        <LockOutlinedIcon style={{color:"white", background:"red", marginBottom:"20px"}}/>
+        <LockOutlinedIcon style={{color:"white", background:"red", marginBottom:"20px", fontSize:"30px"}}/>
         </div>
       Login
       <form>
@@ -40,8 +45,8 @@ function HomeLogIn() {
       <div style={{marginBottom:"20px"}}>
         <TextField label="Password *" variant="outlined" margin="normal"
         color="secondary"/>
-      </div>
-        <Button style={{marginBottom:"20px"}} variant="contained" color="secondary" >
+      </div >
+        <Button onClick={() => dispatch(handle())} style={{marginBottom:"20px"}} variant="contained" color="secondary">
         sign in
         </Button>
       <div onClick={switchSignUp}>
@@ -53,7 +58,8 @@ function HomeLogIn() {
       </div>}
 
       {signUp ? (<div className="LoginForm">
-      <div><LockOutlinedIcon style={{color:"white", background:"red", marginBottom:"20px"}}/></div>
+      <div>
+        <LockOutlinedIcon style={{color:"white", background:"red", marginBottom:"20px", fontSize:"30px"}}/></div>
       Sign Up
       <form>
       <div>
@@ -64,7 +70,7 @@ function HomeLogIn() {
         color="secondary"/>
       </div>
         <Button style={{marginBottom:"20px"}} variant="contained" color="secondary" >
-      sign in
+      register
       </Button>
       <div onClick={switchSignUp}>
       <Link href="#" variant="body2">
