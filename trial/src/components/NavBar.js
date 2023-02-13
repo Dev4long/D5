@@ -1,24 +1,24 @@
 import React from 'react'
 import '../style/navbar.css'
 import {useState} from 'react';
-import { Link, useNavigate} from "react-router-dom";
+import { Link} from "react-router-dom";
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 
 function NavBar() {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
-    const handleClickM = () => {
-      navigate("/merch")
-    }
+    // const handleClickM = () => {
+    //   navigate("/merch")
+    // }
   
-    const handleClickC = () => {
-      navigate("/cart")
-    }
+    // const handleClickC = () => {
+    //   navigate("/cart")
+    // }
   
-    const handleClickA = () => {
-      navigate("/about")
-    }
+    // const handleClickA = () => {
+    //   navigate("/about")
+    // }
 
     const[sidebar, setBar] = useState(false)
   
@@ -36,7 +36,9 @@ function NavBar() {
           <div className="menu">
           <MenuIcon className="menuIcon" style={{fontSize:"50px", marginTop:"5px"}} onClick={showBar} />
           
-            
+          {/* onClick={handleClickA}
+          onClick={handleClickM} 
+          onClick={handleClickC} */}
             
             
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
@@ -45,13 +47,13 @@ function NavBar() {
               <CloseIcon className="X"/>
               </li>
               <li onClick={showBar} className="links">
-              <Link onClick={handleClickA} to="/" style={{textDecoration:"none",color:"white"}} className="linksH">About</Link>
+              <Link to="/about" style={{textDecoration:"none",color:"white"}} className="linksH">About</Link>
               </li>
               <li onClick={showBar}className="links">
-              <Link onClick={handleClickM} to="/merch" style={{textDecoration:"none",color:"white"}} className="linksH">Merch</Link>
+              <Link to="/merch" style={{textDecoration:"none",color:"white"}} className="linksH">Merch</Link>
               </li>
               <li onClick={showBar} className="links">
-              <Link onClick={handleClickC} to="/cart"style={{textDecoration:"none",color:"white"}} className="linksH">Cart</Link>
+              <Link to="/cart"style={{textDecoration:"none",color:"white"}} className="linksH">Cart</Link>
               </li>
             </ul>
             </nav>

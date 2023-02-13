@@ -5,19 +5,37 @@ import TextField from '@material-ui/core/TextField';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Link } from '@material-ui/core';
 import {useState} from 'react';
-import { useDispatch, useSelector } from 'react-redux'
-import { handle } from './slice';
+import HttpClient from './HttpClient';
+// import { useDispatch, useSelector } from 'react-redux'
+// import { handle } from './slice';
 
 
 function HomeLogIn() {
 
-  const truth = useSelector((state) => state.toggle.value)
-  const dispatch = useDispatch()
+  // const truth = useSelector((state) => state.toggle.value)
+  // const dispatch = useDispatch()
 
   const[signUp, toggleSignUp] = useState(false)
-  
   const switchSignUp = () => toggleSignUp(!signUp)
+  const [email, setEmail] = useState(null)
+  const [password, setPassword] = useState(null)
+   
+  const logInUser = async () => {
+    console.log(email, password);
 
+    try {
+      const resp = await HttpClient.post("//127.0.0.1:5000/login", {
+        email,
+        password,
+      });
+      console.log(resp.data)
+      window.location.href = "/about";
+    } catch (error) {
+      if (error.response.status === 401) {
+        alert("Invalid credentials");
+      }
+    } 
+  };
 
   return (
     <div className="LoginContainer">
@@ -40,13 +58,13 @@ function HomeLogIn() {
       Login
       <form>
       <div>
-        <TextField label="Email address *" variant="outlined" margin="normal" color="secondary"/>
+        <TextField label="Email address *" variant="outlined" margin="normal" color="secondary" onChange={(e) => setEmail(e.target.value)}/>
       </div>
       <div style={{marginBottom:"20px"}}>
         <TextField label="Password *" variant="outlined" margin="normal"
-        color="secondary"/>
+        color="secondary" onChange={(e) => setPassword(e.target.value)}/>
       </div >
-        <Button onClick={() => dispatch(handle())} style={{marginBottom:"20px"}} variant="contained" color="secondary">
+        <Button style={{marginBottom:"20px"}} variant="contained" color="secondary"    onClick={() => logInUser()}>
         sign in
         </Button>
       <div onClick={switchSignUp}>
@@ -67,7 +85,7 @@ function HomeLogIn() {
       </div>
       <div style={{marginBottom:"20px"}}>
         <TextField label="Password *" variant="outlined" margin="normal"
-        color="secondary"/>
+        color="secondary" type="password"/>
       </div>
         <Button style={{marginBottom:"20px"}} variant="contained" color="secondary" >
       register
